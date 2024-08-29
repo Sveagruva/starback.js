@@ -38,13 +38,13 @@ You can use starback.js directly with `<script>` tag or import syntax.
   Install via NPM first:
 
   ```bash
-  npm install starback
+  npm install @sveagruva/starback
   ```
 
   and then
 
   ```js
-  import Starback from 'starback'
+  import Starback from '@sveagruva/starback'
   ```
 
 ## Example Usage
@@ -62,6 +62,8 @@ You can use starback.js directly with `<script>` tag or import syntax.
       backgroundColor: ['#0e1118', '#232b3e'],
       randomOpacity: true,
   })
+
+  starback.stop();
 </script>
 ```
 
@@ -132,16 +134,6 @@ mountainImage.onload = () => {
   })
 }
 ```
-
-## Contributing
-
-You can contribute to this repository. See [CONTRIBUTING.md](https://github.com/zuramai/starback.js/blob/main/CONTRIBUTING.md)
-
-## Donate
-
-If you have used this library and it's useful for you, please consider to donate:
-
-[Ko-fi](https://ko-fi.com/saugi) | [Trakteer](https://trakteer.id/saugi)
 
 ## License
 
