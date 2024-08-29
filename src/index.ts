@@ -23,6 +23,7 @@ export default class Starback implements StarbackInterface {
   static DefaultConfig = StarbackDefaultConfig
 
   private ctx
+  private isStoped: boolean = false
   public config: StarbackConfig = {}
   public stars: StarType = null
   public canvas = null
@@ -152,6 +153,13 @@ export default class Starback implements StarbackInterface {
   }
 
   /**
+   * Stop rendering
+   */
+  stop() {
+    this.isStoped = true;
+  }
+
+  /**
    * Draw the FPS in the canvas.
    */
   private drawFps() {
@@ -165,6 +173,9 @@ export default class Starback implements StarbackInterface {
    * @param {DOMHighResTimeStamp} timestamp 
    */
   private render(timestamp) {
+    if(this.isStoped)
+      return;
+
     if (!this.lastCalledTime) this.lastCalledTime = timestamp
 
     let deltaTime = timestamp - this.lastCalledTime
@@ -178,6 +189,4 @@ export default class Starback implements StarbackInterface {
 
     requestAnimationFrame((t) => this.render(t))
   }
-
-
 }
